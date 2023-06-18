@@ -1,7 +1,5 @@
-import React, { useState } from 'react';
+import React, { } from 'react';
 // import '../component/decor.css';
-
-import { FaTrash } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 function AdminNav() {
@@ -12,7 +10,7 @@ function AdminNav() {
 
 <nav class="navbar navbar-expand-lg" id="navbar" >
               <div class="container">
-                <a class="navbar-brand" href="" id="logo" >Salmic</a>
+                <a class="navbar-brand" href="/" id="logo" >Salmic</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
                   <span><i class="fa-solid fa-bars"></i></span>
                 </button>

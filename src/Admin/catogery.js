@@ -1,14 +1,14 @@
 import { useState,useEffect } from "react";
 import { FaEdit, FaTrash } from "react-icons/fa";
-import {  getAllProducts, getAllCategories, addCategory, deleteCategory  } from '../services/api';
+import {  getAllCategories, addCategory, deleteCategory  } from '../services/api';
 
 
 
 const Catogeries=()=>{
   const [categories,setCategories]=useState();
-  const [category, setCategory] = useState();
+  // const [category, setCategory] = useState();
   const [name, setName] = useState('');
-  const [price, setPrice] = useState('');
+  // const [price, setPrice] = useState('');
   const [imgFile, setImgFile] = useState('');
 
   const handleDelete = async (item) => {

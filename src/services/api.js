@@ -54,6 +54,5 @@ export const addCategory = async (catogery) => {
 };
 
 export const deleteCategory = async (id) => {
-  const deleteCat = await axios.delete(`${url}/category/:${id}`);
-
+  await axios.delete(`${url}/category/:${id}`);
 }

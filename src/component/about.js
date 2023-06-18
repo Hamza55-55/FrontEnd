@@ -4,7 +4,7 @@ const AboutUs=()=>{
         {/* <hr></hr> */}
         <div className='row container'>
             <div className='col-md-5'>
-                <img src='ABOUT.png'></img>
+                <img src='ABOUT.png' alt='about us'></img>
             </div>
 
             <div className='col-md-7'>
