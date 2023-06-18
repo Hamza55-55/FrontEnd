@@ -26,12 +26,12 @@ function AdminNav() {
                     </Link>
                   </li>
                   <li className="nav-item">
-                    <Link to="/adminaddition" className="nav-link active">
+                    <Link to="/category" className="nav-link active">
                       Categories
                     </Link>
                   </li>
                   <li className="nav-item">
-                    <Link to="" className="nav-link">
+                    <Link to="/products" className="nav-link">
                      Product
                     </Link>
                   </li>

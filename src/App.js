@@ -10,6 +10,7 @@ import Contactpage from "./pages/contactpage";
 import Checkout from "./pages/Checkout";
 import AdminPage from "./pages/ADMINPAGES/adminaditionpage";
 import AdminImagePage from "./pages/ADMINPAGES/adminimagepage";
+import AdminProductpage from "./pages/ADMINPAGES/adminproducts";
 
 
 
@@ -344,8 +345,9 @@ function App()
       <Route path="/contact" element={<Contactpage/>}></Route>
       <Route path="/checkout" element={<Checkout/>}></Route>
       <Route path="/admin" element={<AdminImagePage/>}></Route>
-      <Route path="/adminaddition" element={<AdminPage/>}></Route>
-      {/* <Route path="/adminview" element={<AdminViewPage/>}></Route> */}
+      <Route path="/category" element={<AdminPage/>}></Route>
+      {/* <Route path="/category/:id" element={<AdminPage/>}></Route> */}
+     <Route path="/products" element={<AdminProductpage/>}></Route> 
       </Routes>
   </AppContext.Provider> 
  

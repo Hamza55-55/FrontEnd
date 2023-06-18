@@ -1,7 +1,9 @@
 
 import AdminNav from "../../Admin/adminnavbar";
-import Productlist from "../../Admin/productlist";
-import Adminaddition from "../../Admin/products";
+import Catogeries from "../../Admin/catogery";
+
+
+
 
 
 
@@ -11,8 +13,8 @@ function AdminPage() {
         <div>
           
         <AdminNav/>
-        {/* <Adminaddition/> */}
-        <Productlist/>
+<Catogeries/>
+        
         </div>
     )
 }

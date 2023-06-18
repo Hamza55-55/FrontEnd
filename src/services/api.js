@@ -29,7 +29,31 @@ export const getAllProducts = async (data) => {
     return await axios.get(`${url}/products`);
     
   } catch (error) {
-    console.error('Failed to add product:');
+    console.error('Failed to list products:');
   }
 };
 
+export const getAllCategories = async () => {
+  try {
+    return await axios.get(`${url}/categories`);
+  } catch (error) {
+    console.error('Failed to list categories:');
+  }
+};
+
+export const addCategory = async (catogery) => {
+  try {
+    console.log('cat ', catogery)
+    const addcat = await axios.post(`${url}/addcategory`, catogery);
+    if (addcat.status === 201) {
+      console.log('Category added successfully!');
+    }
+  } catch (error) {
+    console.error('Failed to add Category:');
+  }
+};
+
+export const deleteCategory = async (id) => {
+  const deleteCat = await axios.delete(`${url}/category/:${id}`);
+
+}
