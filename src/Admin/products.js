@@ -18,7 +18,7 @@ useEffect(() => {
   setProducts(produ?.data?.products);
   }
    fetchData();
- },[categories, products])
+ },[])
 
 
  const handleSubmit = async (e) => {

@@ -39,7 +39,7 @@ const Catogeries=()=>{
       setCategories(dataa?.data?.categories);
     }
     fetchData();
-   },[categories])
+   },[])
  
 return(
 
@@ -71,7 +71,7 @@ return(
                 <tr>
                 <td>{item.name}</td>
                 <td>{item._id}</td>
-                <td> <img style={{height:'100px',width:'100px'}} src={item.image} alt={item.name} /></td>
+                <td> <img style={{height:'100px',width:'100px'}} src={`https://salmic-home-decor.onrender.com/${item.image}`} alt={item.name} /></td>
                 <td key={item}><span><FaEdit data-bs-target="#exampleModal" style={{position:'relative',left:'-1rem',color:'green'}}/></span>
                   <span><FaTrash style={{color:'red'}}/></span></td>
             </tr>

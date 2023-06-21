@@ -44,7 +44,7 @@ function CartData () {
      <div className="row d-flex justify-content-between align-items-center">
         <div className="col-md-2 col-lg-2 col-xl-2">
          <img
-        src={cartData.url}
+         src={`https://salmic-home-decor.onrender.com/${cartData.image}`}
  className="img-fluid rounded-3" alt="" />
      </div>
   <div className="col-md-3 col-lg-3 col-xl-3">

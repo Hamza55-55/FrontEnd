@@ -155,7 +155,7 @@ return(<div>
           {/* <td>{product.categoryId}</td> */}
           <td>{product.price} Rs</td>
           <td>
-            <img style={{ height: '100px', width: '100px' }} src={product.image} alt={product.name} />
+            <img style={{ height: '100px', width: '100px' }} src={`https://salmic-home-decor.onrender.com/${product.image}`} alt={product.name} />
           </td>
           <td>
             <span>

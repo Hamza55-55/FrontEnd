@@ -4,6 +4,8 @@ import {useNavigate} from "react-router-dom";
 import './decor.css';
 import { getAllCategories } from "../services/api";
 const Categeries=()=>{
+  const [categories,setCategories]=useState();
+  
   useEffect(() => {
     async function fetchData() {
       const dataa = await getAllCategories();
@@ -17,7 +19,7 @@ const Categeries=()=>{
     // let data = useContext(AppContext);
 
     
-    const [categories,setCategories]=useState();
+    
 
   const handleitemClick=(item)=>{
       navigate(`/product/${item}`)
@@ -35,7 +37,7 @@ const Categeries=()=>{
             <div class="col-md-6" id="cards" >
             <div class="card" style={{boxShadow:'3px 2px 1px  darkgrey'}} >
                     
-              <img className="images" alt={item.name} src={item.url} onClick={()=>handleitemClick(item._id)}></img>
+              <img className="images" alt={item.name} src={`https://salmic-home-decor.onrender.com/${item.image}`} onClick={()=>handleitemClick(item._id)}></img>
         
               <span className='categoryspan'>
                 {item.name}

@@ -33,7 +33,7 @@ function CategoryProducts(){
   <div class="card-container" >
   <div class="card"  style={{ maxwidth:' 25rem',height: '27rem'}}>
   
-    <img className="images" src={item?.url}  style={{width:'17rem'}}/>
+    <img className="images" src={`https://salmic-home-decor.onrender.com/${item.image}`} alt={item.name} style={{width:'17rem'}}/>
    
     <span className='productspan'>{item?.name}</span>
     <span className='productspan2'>{item.price}.00 RS</span>
