@@ -8,21 +8,26 @@ function Productlist(){
   const [name, setName] = useState('');
   const [price, setPrice] = useState('');
   const [imgFile, setImgFile] = useState('');
-useEffect(async () => {
+useEffect(() => {
+  async function fetchData() {
+   
   const dataa= await getAllCategories();
   setCategories(dataa?.data?.categories);
 
   const produ = await getAllProducts();
   setProducts(produ?.data?.products);
+  }
+   fetchData();
+ },[categories, products])
 
- },[])
+
  const handleSubmit = async (e) => {
   e.preventDefault();
 
   const data = new FormData();
   data.append('categoryId', categoryId);
   data.append('name', name);
-data.append('price',price);
+  data.append('price',price);
   data.append('image', imgFile);
  
 
@@ -53,30 +58,39 @@ return(<div>
         <thead>
             <tr>
                 <th>ProductName</th>
+                <th>CategoryName</th>
                 <th>Price</th>
-                <th>CategoryID</th>
+               
                 <th>Image</th>
                 
             </tr>
         </thead>
         <tbody>
-          {
-            products?.map(item => {
-               return (
-                <tr>
-                <td>{item.name}</td>
-                <td>{item.price}Rs</td>
-                <td>{item.categoryId}</td>
-                <td> <img style={{height:'100px',width:'100px'}} src={item.image} /></td>
-                <td><span><FaEdit style={{position:'relative',left:'-1rem',color:'green'}}/></span>
-                  <span><FaTrash style={{color:'red'}}/></span></td>
-            </tr>
-              )
-            })
-          }
-        
-           
-        </tbody>
+    {products?.map((product) => {
+      const category = categories.find((category) => category._id === product.categoryId);
+      const categoryName = category ? category.name : '';
+
+      return (
+        <tr key={product._id}>
+          <td>{product.name}</td>
+          <td>{categoryName}</td>
+          {/* <td>{product.categoryId}</td> */}
+          <td>{product.price} Rs</td>
+          <td>
+            <img style={{ height: '100px', width: '100px' }} src={product.image} alt={product.name} />
+          </td>
+          <td>
+            <span>
+              <FaEdit style={{ position: 'relative', left: '-1rem', color: 'green' }} />
+            </span>
+            <span>
+              <FaTrash style={{ color: 'red' }} />
+            </span>
+          </td>
+        </tr>
+      );
+    })}
+  </tbody>
      
     </table>
 

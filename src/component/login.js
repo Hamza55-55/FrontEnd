@@ -39,10 +39,6 @@ function Login(){
 		  // Handle the error or show appropriate message to the user
 		}
 	  };
-	  
-	  
-
-
 
     useEffect(() =>{
         Ref.current.focus();

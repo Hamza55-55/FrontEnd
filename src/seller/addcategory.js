@@ -33,10 +33,14 @@ const AddCatogeries=()=>{
     }
   };
 
-  useEffect(async () => {
-   const dataa = await getAllCategories();
-   setCategories(dataa?.data?.categories);
+  useEffect(() => {
+    const fetchData = async () => {
+      const dataa = await getAllCategories();
+      setCategories(dataa?.data?.categories);
+    }
+    fetchData();
   },[])
+  
  
 return(
 

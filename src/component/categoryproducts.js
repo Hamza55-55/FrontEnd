@@ -2,20 +2,31 @@ import { useContext, useState, useEffect } from "react";
 import {AppContext} from '../App';
 import { useParams } from "react-router-dom";
 import './decor.css';
+import { getAllProducts } from "../services/api";
 
 function CategoryProducts(){
-  
-  let { detailProduct, cart, products, addToCardFunction, addProductQuantity } = useContext(AppContext);
+  const [products,setProducts]=useState();
+
+  useEffect(() => {
+    async function fetchData() {
+      const dataa = await getAllProducts();
+      return setProducts(dataa?.data?.products);
+      }
+      fetchData();
+    },[])
+
+  let { detailProduct, cart, addToCardFunction, addProductQuantity } = useContext(AppContext);
   const { productId} = useParams();
 
   const addToCart = (product) => {
-    cart.find(item => item.name === product.name) ? addProductQuantity(product.name) : addToCardFunction(product)
+    cart.find(item => item._id === product._id) ? addProductQuantity(product._id) : addToCardFunction(product)
   }
 
-  const product = detailProduct .filter((item) => item.id == productId)
+  const product = products?.filter((item) =>  item.categoryId === productId)
+  console.log('product ', product)
   return (
     <div style={{backgroundColor: ' #e7e3b9'}}>
-      {product.map((item) => (
+      {product?.map((item) => (
         
     <div key={item.name} style={{display: 'flex',   display:' inline-block',  margin:'9px' }}  >
 

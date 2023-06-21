@@ -16,8 +16,10 @@ const Checkout = () => {
     const nameRef = useRef();
 
     useEffect(() => {
-        setCartData(cart)
-        nameRef.current.focus();
+        return () => {
+            setCartData(cart)
+            nameRef.current.focus();
+        }
     }, []);
 
     const handleFormSubmit = (e) => {

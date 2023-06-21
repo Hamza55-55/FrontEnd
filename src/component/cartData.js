@@ -21,10 +21,10 @@ function CartData () {
         });
     }
     const addToCart = (product) => {
-        addProductQuantity(product.name)
+        addProductQuantity(product._id)
     }
     const removeFromCart = (cartItem) => {
-        removeProductQuantity(cartItem.name)
+        removeProductQuantity(cartItem._id)
     }
     return (
         <div style={{backgroundColor: '#008080'}}>

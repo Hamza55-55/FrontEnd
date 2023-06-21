@@ -9,20 +9,25 @@ function AddProductlist(){
   const [name, setName] = useState('');
   const [price, setPrice] = useState('');
   const [imgFile, setImgFile] = useState('');
-useEffect(async () => {
-  const dataa= await getAllCategories();
-  setCategories(dataa?.data?.categories);
 
-  const produ = await getAllProducts();
-  setProducts(produ?.data?.products);
+ useEffect(() => {
+  async function fetchData() {
+    const dataa= await getAllCategories();
+    setCategories(dataa?.data?.categories);
+  
+    const produ = await getAllProducts();
+    setProducts(produ?.data?.products);
+    }
+     fetchData();
+  },[])
 
- },[])
  const handleSubmit = async (e) => {
   e.preventDefault();
 
   const data = new FormData();
   data.append('categoryId', categoryId);
   data.append('name', name);
+  data.append('quantity', 1);
 data.append('price',price);
   data.append('image', imgFile);
  
@@ -133,7 +138,7 @@ return(<div>
     <tr>
       <th>ProductName</th>
       <th>CategoryName</th>
-      <th>ProductID</th>
+  
       <th>Price</th>
       <th>Image</th>
     </tr>
@@ -147,7 +152,7 @@ return(<div>
         <tr key={product._id}>
           <td>{product.name}</td>
           <td>{categoryName}</td>
-          <td>{product.categoryId}</td>
+          {/* <td>{product.categoryId}</td> */}
           <td>{product.price} Rs</td>
           <td>
             <img style={{ height: '100px', width: '100px' }} src={product.image} alt={product.name} />
