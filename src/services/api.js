@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const url = "http://localhost:5000";
+const url = "https://salmic-home-decor.onrender.com";
 
 export const addcustomer= async(customerInfo) => {
   console.log(customerInfo);
