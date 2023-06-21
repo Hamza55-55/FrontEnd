@@ -3,7 +3,7 @@ function Carosel(){
 
 return(<div > 
   
-<div id="carouselExample" class="carousel slide" >
+<div id="carouselExample" class="carousel slide" style={{width:'100%'}}>
   <div class="carousel-inner">
     <div class="carousel-item active">
       <img src="https://i.etsystatic.com/24528021/r/il/edcac9/3776760985/il_794xN.3776760985_a174.jpg" class="d-block w-100" alt="curtains"/>

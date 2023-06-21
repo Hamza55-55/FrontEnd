@@ -11,6 +11,9 @@ import Checkout from "./pages/Checkout";
 import AdminPage from "./pages/ADMINPAGES/adminaditionpage";
 import AdminImagePage from "./pages/ADMINPAGES/adminimagepage";
 import AdminProductpage from "./pages/ADMINPAGES/adminproducts";
+import SellerNAvPage from "./pages/Sellerpages/sellernavpage";
+import SellerCategoryPage from "./pages/Sellerpages/category";
+import SellerProductpage from "./pages/Sellerpages/product";
 
 
 
@@ -344,10 +347,14 @@ function App()
       <Route path="/about" element={<Aboutpage/>}></Route>
       <Route path="/contact" element={<Contactpage/>}></Route>
       <Route path="/checkout" element={<Checkout/>}></Route>
-      <Route path="/admin" element={<AdminImagePage/>}></Route>
-      <Route path="/category" element={<AdminPage/>}></Route>
-      {/* <Route path="/category/:id" element={<AdminPage/>}></Route> */}
-     <Route path="/products" element={<AdminProductpage/>}></Route> 
+
+      <Route path="/Admin" element={<AdminImagePage/>}></Route> 
+      <Route path="/Viewcategory" element={<AdminPage/>}></Route>
+     <Route path="/viewproducts" element={<AdminProductpage/>}></Route> 
+     
+     <Route path="/Seller" element={<SellerNAvPage/>}></Route> 
+      <Route path="/category" element={<SellerCategoryPage/>}></Route>
+     <Route path="/products" element={<SellerProductpage/>}></Route> 
       </Routes>
   </AppContext.Provider> 
  

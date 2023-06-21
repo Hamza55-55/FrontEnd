@@ -2,7 +2,7 @@ import React, { } from 'react';
 // import '../component/decor.css';
 import { Link } from 'react-router-dom';
 
-function AdminNav() {
+function SellerNav() {
 
 
   return (
@@ -24,12 +24,12 @@ function AdminNav() {
                     </Link>
                   </li>
                   <li className="nav-item">
-                    <Link to="/Viewcategory" className="nav-link active">
+                    <Link to="/category" className="nav-link active">
                       Categories
                     </Link>
                   </li>
                   <li className="nav-item">
-                    <Link to="/Viewproducts" className="nav-link">
+                    <Link to="/products" className="nav-link">
                      Product
                     </Link>
                   </li>
@@ -43,11 +43,12 @@ function AdminNav() {
                 </div>
               </div>
             </nav> 
-
-            <div style={{fontFamily:'cursive',textAlign:'center',backgroundColor:'#008080',height:'4rem',color:'white'}}><h1 >Admin Panel</h1></div>
+<div style={{fontFamily:'cursive',textAlign:'center',backgroundColor:'#008080',height:'4rem',color:'white'}}>
+    <h2 >Seller Panel</h2></div>
+    
     </div>
-   
+
   );
 }
 
-export default AdminNav;
+export default SellerNav;

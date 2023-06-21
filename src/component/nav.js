@@ -61,9 +61,19 @@ function Navbar(){
                             </Link>
                           </li>
                 </ul>
-                <button className='bytn' onClick={adminPage}>
+                {/* 
   Admin
-</button>
+ */}
+<div class="dropdown">
+  <button  class="btn btn-secondary dropdown-toggle" className='bytn' type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Accounts
+  </button>
+  <ul class="dropdown-menu"  >
+   <Link to='/Admin'><li style={{textAlign:'center'}}>Admin</li></Link> 
+   <Link to='/Seller'> <li style={{textAlign:'center'}}>Seller</li></Link>
+   
+  </ul>
+</div>
 
                
                 </div>

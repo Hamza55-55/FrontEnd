@@ -23,7 +23,7 @@ const Categeries=()=>{
             <div class="col-md-6" id="cards" >
             <div class="card" style={{boxShadow:'3px 2px 1px  darkgrey'}} >
                     
-              <img className="images" src={item.url} onClick={()=>handleitemClick(item.id)}></img>
+              <img className="images" alt={item.name} src={item.url} onClick={()=>handleitemClick(item.id)}></img>
         
               <span className='categoryspan'>
                 {item.name}
