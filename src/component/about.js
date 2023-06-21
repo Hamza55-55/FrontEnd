@@ -1,7 +1,7 @@
 import './decor.css';
 const AboutUs=()=>{
     return (<div style={{ backgroundColor: ' #008080', height: '100vh' }}>
-        {/* <hr></hr> */}
+
         <div className='row container'>
             <div className='col-md-5'>
                 <img src='ABOUT.png' alt='about us'></img>

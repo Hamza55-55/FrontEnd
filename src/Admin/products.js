@@ -67,6 +67,7 @@ return(<div>
         </thead>
         <tbody>
     {products?.map((product) => {
+      
       const category = categories.find((category) => category._id === product.categoryId);
       const categoryName = category ? category.name : '';
 
@@ -74,7 +75,7 @@ return(<div>
         <tr key={product._id}>
           <td>{product.name}</td>
           <td>{categoryName}</td>
-          {/* <td>{product.categoryId}</td> */}
+         
           <td>{product.price} Rs</td>
           <td>
             <img style={{ height: '100px', width: '100px' }} src={product.image} alt={product.name} />

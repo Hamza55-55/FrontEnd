@@ -6,9 +6,7 @@ import {  getAllCategories, addCategory } from '../services/api';
 
 const Catogeries=()=>{
   const [categories,setCategories]=useState();
-  // const [category, setCategory] = useState();
-  const [name, setName] = useState('');
-  // const [price, setPrice] = useState('');
+   const [name, setName] = useState('');
   const [imgFile, setImgFile] = useState('');
 
  
@@ -18,7 +16,6 @@ const Catogeries=()=>{
 
     const data = new FormData();
     data.append('name', name);
-    // data.append('price', price);
     data.append('image', imgFile);
    
 
@@ -26,7 +23,6 @@ const Catogeries=()=>{
       const response = await addCategory(data);
       console.log('response ',response)
       setName('');
-      // setPrice('');
       setImgFile('');
     } catch (error) {
       console.error('Error adding category:', error);
@@ -58,7 +54,7 @@ return(
         <thead>
             <tr>
                 <th>CategoryName</th>
-                <th>CategoryId</th>
+               
            
                 <th>Image</th>
                 
@@ -70,7 +66,7 @@ return(
                return (
                 <tr>
                 <td>{item.name}</td>
-                <td>{item._id}</td>
+            
                 <td> <img style={{height:'100px',width:'100px'}} src={`https://salmic-home-decor.onrender.com/${item.image}`} alt={item.name} /></td>
                 <td key={item}><span><FaEdit data-bs-target="#exampleModal" style={{position:'relative',left:'-1rem',color:'green'}}/></span>
                   <span><FaTrash style={{color:'red'}}/></span></td>

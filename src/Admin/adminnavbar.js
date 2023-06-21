@@ -1,5 +1,4 @@
 import React, { } from 'react';
-// import '../component/decor.css';
 import { Link } from 'react-router-dom';
 
 function AdminNav() {
