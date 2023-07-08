@@ -1,6 +1,7 @@
 import axios from "axios";
 
 const url = "https://salmic-home-decor.onrender.com";
+// const url = "http://localhost:5000";
 
 export const addcustomer= async(customerInfo) => {
   console.log(customerInfo);
@@ -50,6 +51,29 @@ export const addCategory = async (catogery) => {
     }
   } catch (error) {
     console.error('Failed to add Category:');
+  }
+};
+
+export const deleteProduct = async (product) => {
+  try {
+    console.log('cat ', product)
+    const addcat = await axios.post(`${url}/delete/product`, product);
+    if (addcat.status === 201) {
+      console.log('Product deleted successfully!');
+    }
+  } catch (error) {
+    console.error('Failed to detete product:');
+  }
+};
+export const deleteCategory = async (category) => {
+  try {
+    console.log('cat ', category)
+    const addcat = await axios.post(`${url}/delete/category`, category);
+    if (addcat.status === 201) {
+      console.log('category deleted successfully!');
+    }
+  } catch (error) {
+    console.error('Failed to detete category:');
   }
 };
 
