@@ -134,7 +134,7 @@ const Checkout = () => {
                                 <li key={item.id}>
                              
                                    
-                                    <img src={item.url} style={{width:'7rem',height:'7rem'}}></img>
+                                    <img src={`https://salmic-home-decor.onrender.com/${item.url}`} style={{width:'7rem',height:'7rem'}}></img>
                                     <span style={{position:'relative',top:'1rem',left:'1rem',color:'white'}}>{item.name} - {item.price}Rs</span>
                                 </li>
                             ))}
