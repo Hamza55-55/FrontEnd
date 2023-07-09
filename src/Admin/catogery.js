@@ -1,6 +1,6 @@
 import { useState,useEffect } from "react";
 import { FaEdit, FaTrash } from "react-icons/fa";
-import {  getAllCategories, addCategory } from '../services/api';
+import {  getAllCategories, addCategory ,deleteCategory } from '../services/api';
 
 
 
@@ -10,6 +10,15 @@ const Catogeries=()=>{
   const [imgFile, setImgFile] = useState('');
 
  
+  const handleDelete = async (category) => {
+    console.log('category ', category)
+    try {
+      const response = await deleteCategory(category);
+      console.log('category deleted ',response)
+    } catch (error) {
+      console.error('Error deleting category:', error);
+    }
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -69,7 +78,7 @@ return(
             
                 <td> <img style={{height:'100px',width:'100px'}} src={`https://salmic-home-decor.onrender.com/${item.image}`} alt={item.name} /></td>
                 <td key={item}><span><FaEdit data-bs-target="#exampleModal" style={{position:'relative',left:'-1rem',color:'green'}}/></span>
-                  <span><FaTrash style={{color:'red'}}/></span></td>
+                  <span><FaTrash onClick={() => handleDelete(item)}  style={{color:'red'}}/></span></td>
             </tr>
               )
             })

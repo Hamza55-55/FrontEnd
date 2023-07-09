@@ -1,6 +1,6 @@
 import { useEffect,useState } from "react";
 import { FaEdit, FaTrash } from "react-icons/fa";
-import { addProduct, getAllCategories, getAllProducts } from "../services/api";
+import { addProduct, getAllCategories, getAllProducts,deleteProduct } from "../services/api";
 function Productlist(){
   const [categories,setCategories]=useState();
   const [products,setProducts]=useState();
@@ -20,7 +20,15 @@ useEffect(() => {
    fetchData();
  },[])
 
-
+ const handleDelete = async (product) => {
+  console.log('product ', product)
+  try {
+    const response = await deleteProduct(product);
+    console.log('response ',response)
+  } catch (error) {
+    console.error('Error adding category:', error);
+  }
+}
  const handleSubmit = async (e) => {
   e.preventDefault();
 
@@ -85,7 +93,7 @@ return(<div>
               <FaEdit style={{ position: 'relative', left: '-1rem', color: 'green' }} />
             </span>
             <span>
-              <FaTrash style={{ color: 'red' }} />
+              <FaTrash onClick={() => handleDelete(product)} style={{ color: 'red' }} />
             </span>
           </td>
         </tr>
